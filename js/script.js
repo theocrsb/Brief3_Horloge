@@ -14,9 +14,9 @@ function demarrerLaMontre() {
   const minute = minutes * 6;
   const second = seconds * 6;
   // transfome le temps actuel en graphique. si 12h, 360 deg
-  document.querySelector("#hour").style.transform = `rotate(${hour}deg)`;
-  document.querySelector("#minute").style.transform = `rotate(${minute}deg)`;
-  document.querySelector("#second").style.transform = `rotate(${second}deg)`;
+  AIGUILLEHR.style.transform = `rotate(${hour}deg)`;
+  AIGUILLEMIN.style.transform = `rotate(${minute}deg)`;
+  AIGUILLESEC.style.transform = `rotate(${second}deg)`;
 }
 // Exercuter la fonction chaque seconde
 const interval = setInterval(demarrerLaMontre, 1000);
