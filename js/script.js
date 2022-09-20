@@ -8,7 +8,7 @@ const hours = date.getHours();
 const minutes = date.getMinutes();
 const seconds = date.getSeconds();
 // creation du pas en deg a chaque seconde
-const degheure = 0.00833;
+const degheure = 360 / 43200;
 const degminute = 0.1;
 const degseconde = 6;
 // convertir heure actuelle en degrés
