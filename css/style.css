@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
 /* Layout */
 .main {
   display: flex;
@@ -46,7 +48,7 @@
 
 .second-arm {
   fill: none;
-  stroke: #000;
+  stroke: rgb(224, 59, 59);
   stroke-width: 4;
   stroke-miterlimit: 10;
 }
@@ -70,6 +72,7 @@
   align-items: center;
   justify-content: center;
   font-size: 2.5em;
+  font-family: "Anton", sans-serif;
 }
 
 /* modification perso */
@@ -78,9 +81,10 @@ body {
 }
 .heure p {
   margin: 0 0 0 0;
-  color: rgb(0, 0, 0);
+  color: rgb(224, 59, 59);
   padding: 0.5em 0.5em 0.5em 0.5em;
   border-radius: 6px;
   background: linear-gradient(145deg, #70834c, #859c5a);
   box-shadow: 8px 8px 42px #72864d, -8px -8px 42px #869e5b;
+  text-shadow: #000 1px 1px 1px;
 }
