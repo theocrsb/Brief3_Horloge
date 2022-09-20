@@ -7,18 +7,20 @@ const date = new Date();
 const hours = date.getHours();
 const minutes = date.getMinutes();
 const seconds = date.getSeconds();
-// creation du pas en deg a chaque seconde 
+// creation du pas en deg a chaque seconde
 const degheure = 0.00833;
 const degminute = 0.1;
 const degseconde = 6;
 // convertir heure actuelle en degrés
-let hour = hours * 3600 * degheure;
-let minute = minutes * 60 * degminute;
 let second = seconds * degseconde;
+let minute = minutes * 60 * degminute + degminute * seconds;
+let hour =
+  hours * degheure * 3600 + degheure * 60 * minutes + degheure * seconds;
+
 // mettre la rotation de base en fonction de l'heure actuelle
-AIGUILLEHR.style.transform = `rotate(${hour}deg)`;
-AIGUILLEMIN.style.transform = `rotate(${minute}deg)`;
 AIGUILLESEC.style.transform = `rotate(${second}deg)`;
+AIGUILLEMIN.style.transform = `rotate(${minute}deg)`;
+AIGUILLEHR.style.transform = `rotate(${hour}deg)`;
 // ajouter le pas a chaque seconde
 function demarrerLaMontre() {
   AIGUILLEHR.style.transform += `rotate(${degheure}deg)`;
