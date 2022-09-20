@@ -6,7 +6,7 @@ const AIGUILLESEC = document.querySelector("#second");
 function demarrerLaMontre() {
   // variable pour recuperer heure, minute et seconde en temps reel
   const date = new Date();
-  const hours = ((date.getHours() + 11) % 12) + 1;
+  const hours = date.getHours();
   const minutes = date.getMinutes();
   const seconds = date.getSeconds();
   // hours * 30 pour avoir 360deg au bout de 12h
