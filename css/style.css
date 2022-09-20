@@ -78,7 +78,7 @@ body {
 }
 .heure p {
   margin: 0 0 0 0;
-  color: rgb(217, 217, 217);
+  color: rgb(0, 0, 0);
   padding: 0.5em 0.5em 0.5em 0.5em;
   border-radius: 6px;
   background: linear-gradient(145deg, #70834c, #859c5a);
