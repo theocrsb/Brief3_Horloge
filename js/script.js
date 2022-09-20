@@ -3,20 +3,28 @@ const AIGUILLEHR = document.querySelector("#hour");
 const AIGUILLEMIN = document.querySelector("#minute");
 const AIGUILLESEC = document.querySelector("#second");
 
+const date = new Date();
+const hours = date.getHours();
+const minutes = date.getMinutes();
+const seconds = date.getSeconds();
+
+const degheure = 0.00833;
+const degminute = 0.1;
+const degseconde = 6;
+
+let hour = hours * 3600 * degheure;
+let minute = minutes * 60 * degminute;
+let second = seconds * degseconde;
+
+AIGUILLEHR.style.transform = `rotate(${hour}deg)`;
+AIGUILLEMIN.style.transform = `rotate(${minute}deg)`;
+AIGUILLESEC.style.transform = `rotate(${second}deg)`;
+
 function demarrerLaMontre() {
-  // variable pour recuperer heure, minute et seconde en temps reel
-  const date = new Date();
-  const hours = date.getHours();
-  const minutes = date.getMinutes();
-  const seconds = date.getSeconds();
-  // hours * 30 pour avoir 360deg au bout de 12h
-  const hour = hours * 30;
-  const minute = minutes * 6;
-  const second = seconds * 6;
-  // transfome le temps actuel en graphique. si 12h, 360 deg
-  AIGUILLEHR.style.transform = `rotate(${hour}deg)`;
-  AIGUILLEMIN.style.transform = `rotate(${minute}deg)`;
-  AIGUILLESEC.style.transform = `rotate(${second}deg)`;
+  AIGUILLEHR.style.transform += `rotate(${degheure}deg)`;
+  console.log(AIGUILLEHR.style.transform);
+  AIGUILLEMIN.style.transform += `rotate(${degminute}deg)`;
+  AIGUILLESEC.style.transform += `rotate(${degseconde}deg)`;
 }
 // Exercuter la fonction chaque seconde
 const interval = setInterval(demarrerLaMontre, 1000);
