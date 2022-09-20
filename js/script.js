@@ -2,24 +2,24 @@
 const AIGUILLEHR = document.querySelector("#hour");
 const AIGUILLEMIN = document.querySelector("#minute");
 const AIGUILLESEC = document.querySelector("#second");
-
+// recuperer heure réelle
 const date = new Date();
 const hours = date.getHours();
 const minutes = date.getMinutes();
 const seconds = date.getSeconds();
-
+// creation du pas en deg a chaque seconde 
 const degheure = 0.00833;
 const degminute = 0.1;
 const degseconde = 6;
-
+// convertir heure actuelle en degrés
 let hour = hours * 3600 * degheure;
 let minute = minutes * 60 * degminute;
 let second = seconds * degseconde;
-
+// mettre la rotation de base en fonction de l'heure actuelle
 AIGUILLEHR.style.transform = `rotate(${hour}deg)`;
 AIGUILLEMIN.style.transform = `rotate(${minute}deg)`;
 AIGUILLESEC.style.transform = `rotate(${second}deg)`;
-
+// ajouter le pas a chaque seconde
 function demarrerLaMontre() {
   AIGUILLEHR.style.transform += `rotate(${degheure}deg)`;
   console.log(AIGUILLEHR.style.transform);
@@ -42,12 +42,13 @@ function Heurereelle() {
   modifseconde.innerHTML = secondes;
   let modifminute = document.getElementById("minute2");
   modifminute.innerHTML = minutes;
-  if (secondes % 3 === 0) {
-    document.getElementById("seconde2").style.color = "red";
-    document.getElementById("seconde2").style.fontWeight = "bold";
-  } else {
-    document.getElementById("seconde2").style.color = "black";
-    document.getElementById("seconde2").style.fontWeight = "normal";
-  }
+  // creation d'un style en fonction d'une condition
+  // if (secondes % 3 === 0) {
+  //   document.getElementById("seconde2").style.color = "red";
+  //   document.getElementById("seconde2").style.fontWeight = "bold";
+  // } else {
+  //   document.getElementById("seconde2").style.color = "black";
+  //   document.getElementById("seconde2").style.fontWeight = "normal";
+  // }
 }
 const interval2 = setInterval(Heurereelle, 1000);
